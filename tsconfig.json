@@ -1,0 +1,54 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@common/swagger": [
+        "libs/swagger/src"
+      ],
+      "@common/swagger/*": [
+        "libs/swagger/src/*"
+      ],
+      "@common/body-parser": [
+        "libs/body-parser/src"
+      ],
+      "@common/body-parser/*": [
+        "libs/body-parser/src/*"
+      ],
+      "@common/validation": [
+        "libs/validation/src"
+      ],
+      "@common/validation/*": [
+        "libs/validation/src/*"
+      ],
+      "@common/logger": [
+        "libs/logger/src"
+      ],
+      "@common/logger/*": [
+        "libs/logger/src/*"
+      ],
+      "@common/config": [
+        "libs/config/src"
+      ],
+      "@common/config/*": [
+        "libs/config/src/*"
+      ]
+    }
+  }
+}

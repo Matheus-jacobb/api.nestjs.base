@@ -1,0 +1,25 @@
+{
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "@common/swagger/(.*)": "<rootDir>/../libs/swagger/src/$1",
+    "@common/swagger": "<rootDir>/../libs/swagger/src",
+    "common/body-parser/(.*)": "<rootDir>/../libs/body-parser/src/$1",
+    "common/body-parser": "<rootDir>/../libs/body-parser/src",
+    "@common/validation/(.*)": "<rootDir>/../libs/validation/src/$1",
+    "@common/validation": "<rootDir>/../libs/validation/src",
+    "@common/logger/(.*)": "<rootDir>/../libs/logger/src/$1",
+    "@common/logger": "<rootDir>/../libs/logger/src",
+    "@common/config/(.*)": "<rootDir>/../libs/config/src/$1",
+    "@common/config": "<rootDir>/../libs/config/src"
+  }
+}

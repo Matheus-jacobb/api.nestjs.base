@@ -25,16 +25,21 @@
     "@nestjs/core": "9.4.0",
     "@nestjs/platform-express": "9.4.0",
     "@nestjs/swagger": "6.3.0",
+    "@nestjs/typeorm": "9.0.1",
+    "@rewiko/crud-typeorm": "5.1.12",
     "@types/pino": "7.0.5",
     "body-parser": "1.20.2",
     "class-transformer": "0.5.1",
     "class-validator": "0.14.0",
     "lib": "5.0.1",
     "nestjs-pino": "3.2.0",
+    "pg": "8.11.0",
     "pino-http": "8.3.3",
     "pino-pretty": "10.0.0",
     "reflect-metadata": "0.1.13",
-    "rxjs": "7.8.1"
+    "rxjs": "7.8.1",
+    "typeorm": "0.3.16",
+    "typeorm-transactional-cls-hooked": "^0.1.21"
   },
   "devDependencies": {
     "@nestjs/cli": "9.4.2",
@@ -81,7 +86,10 @@
       "@common/body-parser(|/.*)$": "<rootDir>/libs/body-parser/src/$1",
       "^@common/validation(|/.*)$": "<rootDir>/libs/validation/src/$1",
       "^@common/logger(|/.*)$": "<rootDir>/libs/logger/src/$1",
-      "^@common/config(|/.*)$": "<rootDir>/libs/config/src/$1"
+      "^@common/config(|/.*)$": "<rootDir>/libs/config/src/$1",
+      "^common/paginated(|/.*)$": "<rootDir>/libs/paginated/src/$1",
+      "^@common/authorization(|/.*)$": "<rootDir>/libs/authorization/src/$1",
+      "^@common/typeorm(|/.*)$": "<rootDir>/libs/typeorm/src/$1"
     }
   }
 }

@@ -13,3 +13,23 @@ https://docs.nestjs.com/faq/raw-body#body-parser-size-limit
 
 logger pino
 https://github.com/iamolegga/nestjs-pino
+
+https://github.com/H4ad/tp-cli
+`tp restore` Restaurar backup do arquivo "tp.yml"
+`tp local api` Salvar o backup do arquivo "tp" ( arquivo utilizado como template para gerar os modelos crud )
+`tp g resource <plural_entity_name>`
+
+
+Entidades:
+    Ao criar uma entidade, importar em: `src/typeorm/entities.db.ts`
+
+
+next steps:
+
+    - Rodar API e resovler erros.
+    - Criar o user roles enum.
+    - Repositorio
+        - Repositorio base no @common/typeorm
+    - RequestUser:
+        - Mover para authentication
+    - Migrations

@@ -6,6 +6,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
+    "useDefineForClassFields": false,
     "esModuleInterop": true,
     "target": "es2017",
     "sourceMap": true,
@@ -48,6 +49,24 @@
       ],
       "@common/config/*": [
         "libs/config/src/*"
+      ],
+      "@common/paginated": [
+        "libs/paginated/src"
+      ],
+      "@common/paginated/*": [
+        "libs/paginated/src/*"
+      ],
+      "@common/authorization": [
+        "libs/authorization/src"
+      ],
+      "@common/authorization/*": [
+        "libs/authorization/src/*"
+      ],
+      "@common/typeorm": [
+        "libs/typeorm/src"
+      ],
+      "@common/typeorm/*": [
+        "libs/typeorm/src/*"
       ]
     }
   }

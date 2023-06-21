@@ -1,13 +1,13 @@
+import '@common/config';
 import { LoggerModule } from '@common/logger';
 import { ValidationModule } from '@common/validation';
 import { Module } from '@nestjs/common';
-import '@common/config';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import appConfig from './app.config';
 import { AppController } from './app.controller';
+import { AppModuleRouting } from './app.module.routing';
 import { AppService } from './app.service';
 import { TypeormModule } from './typeorm/typeorm.module';
-import { UserModule } from './modules/users/user.module';
 
 @Module({
   imports: [
@@ -28,7 +28,7 @@ import { UserModule } from './modules/users/user.module';
     }),
     ValidationModule,
     TypeormModule,
-    UserModule,
+    AppModuleRouting,
   ],
   controllers: [AppController],
   providers: [AppService],

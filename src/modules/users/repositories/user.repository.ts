@@ -1,23 +1,23 @@
 //#region Imports
 
+import { BaseIdentityRepository } from '@common/typeorm/identity/base-identity.repository';
 import { Injectable } from '@nestjs/common';
-import { DataSource, Repository } from 'typeorm';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { UserEntity } from '../entities/user.entity';
 
 //#endregion
 
 @Injectable()
-export class UserRepository extends Repository<UserEntity> {
+export class UserRepository extends BaseIdentityRepository<UserEntity> {
 
   //#region Constructor
 
   constructor(
-    private dataSource: DataSource
+    @InjectRepository(UserEntity)
+    repository: Repository<UserEntity>,
   ) {
-    super(
-      UserEntity,
-      dataSource.createEntityManager()
-    )
+    super(repository);
   }
 
   //#endregion

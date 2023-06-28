@@ -2,13 +2,13 @@ import { Column, CreateDateColumn, PrimaryGeneratedColumn, UpdateDateColumn } fr
 
 export class BaseEntity {
   @PrimaryGeneratedColumn()
-  public id: number;
+  public id!: number;
 
   @CreateDateColumn()
-  public createdAt: Date;
+  public createdAt!: Date;
 
   @UpdateDateColumn()
-  public updatedAt: Date;
+  public updatedAt!: Date;
 
   @Column({ default: true })
   public isActive!: boolean;

@@ -12,4 +12,10 @@ export class UserEntity extends BaseEntity {
 
   @Column()
   public name!: string;
+
+  @Column()
+  public password!: string;
+
+  @Column()
+  public role!: string;
 }

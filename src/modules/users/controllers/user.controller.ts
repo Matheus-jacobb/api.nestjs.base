@@ -1,6 +1,6 @@
 //#region Imports
 
-import { RequestUser } from '@common/authorization';
+import { IRequestUser } from '@common/authorization';
 import { ApiOkResponse, ApiOperation } from '@common/swagger';
 import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put, Query } from '@nestjs/common';
 import { ApiNoContentResponse, ApiTags } from '@nestjs/swagger';
@@ -30,28 +30,28 @@ export class UserController {
   @Get()
   @ApiOperation('List Users paginated.')
   @ApiOkResponse(UserPaginatedProxy)
-  public getPaginated(requestUser: RequestUser, @Query() query: UserPaginatedQuery): Promise<UserPaginatedProxy> {
+  public getPaginated(requestUser: IRequestUser, @Query() query: UserPaginatedQuery): Promise<UserPaginatedProxy> {
     return this.service.getPaginated(requestUser, query);
   }
 
   @Get(':id')
   @ApiOperation('Get a User by id.')
   @ApiOkResponse(UserProxy)
-  public get(requestUser: RequestUser, @Param('id', ParseIntPipe) id: number): Promise<UserProxy> {
+  public get(requestUser: IRequestUser, @Param('id', ParseIntPipe) id: number): Promise<UserProxy> {
     return this.service.get(requestUser, id);
   }
 
   @Post()
   @ApiOperation('Create a new User.')
   @ApiOkResponse(UserProxy)
-  public create(requestUser: RequestUser, @Body() payload: CreateUserPayload): Promise<UserProxy> {
+  public create(requestUser: IRequestUser, @Body() payload: CreateUserPayload): Promise<UserProxy> {
     return this.service.create(requestUser, payload);
   }
 
   @Put(':id')
   @ApiOperation('Update a User.')
   @ApiOkResponse(UserProxy)
-  public update(requestUser: RequestUser, @Param('id', ParseIntPipe) id: number, @Body() payload: UpdateUserPayload): Promise<UserProxy> {
+  public update(requestUser: IRequestUser, @Param('id', ParseIntPipe) id: number, @Body() payload: UpdateUserPayload): Promise<UserProxy> {
     return this.service.update(requestUser, id, payload);
   }
 
@@ -59,7 +59,7 @@ export class UserController {
   @ApiOperation('Delete a User.')
   @ApiNoContentResponse()
   @HttpCode(HttpStatus.NO_CONTENT)
-  public delete(requestUser: RequestUser, @Param('id', ParseIntPipe) id: number): Promise<void> {
+  public delete(requestUser: IRequestUser, @Param('id', ParseIntPipe) id: number): Promise<void> {
     return this.service.delete(requestUser, id);
   }
 

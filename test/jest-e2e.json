@@ -26,6 +26,8 @@
     "@common/authorization/(.*)": "<rootDir>/../libs/authorization/src/$1",
     "@common/authorization": "<rootDir>/../libs/authorization/src",
     "@common/typeorm/(.*)": "<rootDir>/../libs/typeorm/src/$1",
-    "@common/typeorm": "<rootDir>/../libs/typeorm/src"
+    "@common/typeorm": "<rootDir>/../libs/typeorm/src",
+    "@common/authentication/(.*)": "<rootDir>/../libs/authentication/src/$1",
+    "@common/authentication": "<rootDir>/../libs/authentication/src"
   }
 }

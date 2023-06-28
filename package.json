@@ -20,19 +20,25 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@golevelup/ts-jest": "0.3.7",
     "@nestjs/common": "9.4.0",
     "@nestjs/config": "2.3.1",
     "@nestjs/core": "9.4.0",
+    "@nestjs/jwt": "10.1.0",
+    "@nestjs/passport": "10.0.0",
     "@nestjs/platform-express": "9.4.0",
     "@nestjs/swagger": "6.3.0",
     "@nestjs/typeorm": "9.0.1",
     "@rewiko/crud-typeorm": "5.1.12",
     "@types/pino": "7.0.5",
+    "bcryptjs": "2.4.3",
     "body-parser": "1.20.2",
     "class-transformer": "0.5.1",
     "class-validator": "0.14.0",
     "lib": "5.0.1",
     "nestjs-pino": "3.2.0",
+    "passport-jwt": "4.0.1",
+    "passport-local": "1.0.0",
     "pg": "8.11.0",
     "pino-http": "8.3.3",
     "pino-pretty": "10.0.0",
@@ -60,36 +66,5 @@
     "ts-node": "10.9.1",
     "tsconfig-paths": "4.2.0",
     "typescript": "4.9.5"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "rootDir": ".",
-    "testRegex": ".*\\.spec\\.ts$",
-    "transform": {
-      ".+\\.(t|j)s$": "ts-jest"
-    },
-    "collectCoverageFrom": [
-      "**/*.(t|j)s"
-    ],
-    "coverageDirectory": "./coverage",
-    "testEnvironment": "node",
-    "roots": [
-      "<rootDir>/src/",
-      "<rootDir>/libs/"
-    ],
-    "moduleNameMapper": {
-      "@common/swagger(|/.*)$": "<rootDir>/libs/swagger/src/$1",
-      "@common/body-parser(|/.*)$": "<rootDir>/libs/body-parser/src/$1",
-      "^@common/validation(|/.*)$": "<rootDir>/libs/validation/src/$1",
-      "^@common/logger(|/.*)$": "<rootDir>/libs/logger/src/$1",
-      "^@common/config(|/.*)$": "<rootDir>/libs/config/src/$1",
-      "^common/paginated(|/.*)$": "<rootDir>/libs/paginated/src/$1",
-      "^@common/authorization(|/.*)$": "<rootDir>/libs/authorization/src/$1",
-      "^@common/typeorm(|/.*)$": "<rootDir>/libs/typeorm/src/$1"
-    }
   }
 }

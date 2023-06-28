@@ -6,19 +6,20 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "useDefineForClassFields": false,
-    "esModuleInterop": true,
-    "target": "es2017",
-    "sourceMap": true,
+    "target": "es2022",
     "outDir": "./dist",
     "baseUrl": "./",
+    "strict": true,
     "incremental": true,
     "skipLibCheck": true,
-    "strictNullChecks": false,
+    "strictNullChecks": true,
     "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
+    "strictBindCallApply": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "useDefineForClassFields": false,
+    "esModuleInterop": true,
+    "sourceMap": true,
     "paths": {
       "@common/swagger": [
         "libs/swagger/src"
@@ -67,6 +68,12 @@
       ],
       "@common/typeorm/*": [
         "libs/typeorm/src/*"
+      ],
+      "@common/authentication": [
+        "libs/authentication/src"
+      ],
+      "@common/authentication/*": [
+        "libs/authentication/src/*"
       ]
     }
   }

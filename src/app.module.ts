@@ -7,6 +7,7 @@ import appConfig from './app.config';
 import { AppController } from './app.controller';
 import { AppModuleRouting } from './app.module.routing';
 import { AppService } from './app.service';
+import { LocalUserModule } from './modules/users-local/local-user.module';
 import { TypeormModule } from './typeorm/typeorm.module';
 
 @Module({
@@ -29,6 +30,7 @@ import { TypeormModule } from './typeorm/typeorm.module';
     ValidationModule,
     TypeormModule,
     AppModuleRouting,
+    LocalUserModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -1,1 +1,1 @@
-export * from './request-user';
+export * from '@common/authentication/models/request.user.interface';

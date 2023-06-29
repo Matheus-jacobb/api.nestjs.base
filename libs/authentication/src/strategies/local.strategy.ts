@@ -15,6 +15,7 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
 
   public async validate(username: string, password: string): Promise<IRequestUser> {
     //TODO: ADICIONAR VALIDAÇÕES NO USERNAME, PASSWORD
+    // VALIDAR ERRO USERNAME VINDO COMO "VALOR" COM ASPAS
     return await this.service.getUser(username, password);
   }
 }

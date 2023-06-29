@@ -47,6 +47,6 @@ describe('LocalAuthenticationModule', () => {
       ],
     }).compile();
 
-    await expect(moduleRef.get(LocalStrategy).validate('blabla', 'blabla')).resolves.toEqual(mockUser);
+    await expect(moduleRef.get(LocalStrategy).validate('username', 'password')).resolves.toEqual(mockUser);
   });
 });

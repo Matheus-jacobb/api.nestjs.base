@@ -4,7 +4,7 @@ import { IRequestUser } from '@common/authentication/models/request.user.interfa
 import { AuthenticationService } from '@common/authentication/services/authentication.service';
 import { CurrentUser } from '@common/authentication/decorators/user.decorator';
 import { ApiOkResponse, ApiOperation } from '@common/swagger';
-import { Body, Controller, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Headers, Post, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiBody, ApiTags } from '@nestjs/swagger';
 
@@ -20,7 +20,7 @@ export class LocalController {
   @UseGuards(AuthGuard('local'))
   @Post('local')
   @ApiBody({ type: LocalLoginPayload })
-  public getJWTFromLocalAuthentication(@CurrentUser() requestUser: IRequestUser): Promise<JwtTokenProxy> {
+  public getJWTFromLocalAuthentication(@CurrentUser() requestUser: IRequestUser, @Headers('User-Agent') userAgent: string): Promise<JwtTokenProxy> {
     return this.service.getJWTFromRequestUser(requestUser);
   }
 }

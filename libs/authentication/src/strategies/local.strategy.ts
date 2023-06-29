@@ -14,7 +14,6 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
   }
 
   public async validate(username: string, password: string): Promise<IRequestUser> {
-    console.log('teste strategy')
     //TODO: ADICIONAR VALIDAÇÕES NO USERNAME, PASSWORD
     return await this.service.getUser(username, password);
   }

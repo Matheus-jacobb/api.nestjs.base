@@ -4,13 +4,13 @@ import { Injectable } from '@nestjs/common';
 import { UserRepository } from '../users/repositories/user.repository';
 
 @Injectable()
-export class LocalUserService implements  ILocalUserService {
+export class LocalUserService implements ILocalUserService {
   constructor(
     protected readonly repository: UserRepository,
   ) {}
 
   public async getUser(username:string, password:string): Promise<IRequestUser> {
-    // TODO: Implementar
+    // TODO: Implementar logica do banco
 
     return {id: 1, role: ''};
   }

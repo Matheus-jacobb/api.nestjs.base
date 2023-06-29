@@ -20,7 +20,7 @@ export class LocalController {
   @UseGuards(AuthGuard('local'))
   @Post('local')
   @ApiBody({ type: LocalLoginPayload })
-  public getJWTFromLocalAuthentication(@CurrentUser() requestUser: IRequestUser, @Body() payload: LocalLoginPayload): Promise<JwtTokenProxy> {
+  public getJWTFromLocalAuthentication(@CurrentUser() requestUser: IRequestUser): Promise<JwtTokenProxy> {
     return this.service.getJWTFromRequestUser(requestUser);
   }
 }

@@ -1,7 +1,8 @@
 //#region Imports
 
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsString, MaxLength } from 'class-validator';
+import { IsEnum, IsNotEmpty, IsString, MaxLength } from 'class-validator';
+import { UserRolesEnum } from './user-roles.enum';
 
 //#endregion
 
@@ -11,6 +12,18 @@ export class CreateUserPayload {
   @IsString()
   @IsNotEmpty()
   @MaxLength(256)
-  public name!: string;
+  public email!: string;
+
+  @ApiProperty()
+  @IsString()
+  @IsNotEmpty()
+  @MaxLength(256)
+  public password!: string;
+
+  @ApiProperty()
+  @IsString()
+  @IsNotEmpty()
+  @MaxLength(256)
+  public role!: string;
 
 }

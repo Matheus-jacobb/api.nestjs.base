@@ -10,6 +10,7 @@ import { UserPaginatedProxy } from '../models/user.paginated.proxy';
 import { UserPaginatedQuery } from '../models/user.paginated.query';
 import { UserProxy } from '../models/user.proxy';
 import { UserRepository } from '../repositories/user.repository';
+import * as bcrypt from 'bcryptjs'
 
 //#endregion
 
@@ -56,15 +57,22 @@ export class UserService {
 
   public async create(requestUser: IRequestUser, payload: CreateUserPayload): Promise<UserProxy> {
     const onValidate = async () => {
+      const salt = await bcrypt.genSalt();
+
+      payload.password = await bcrypt.hash(payload.password, salt);
+
       const entity = new UserEntity({
-        name: payload.name,
+        email: payload.email,
+        role: payload.role,
+        password: payload.password
       });
 
       return await this.repository.insert(entity)
         .then(doc => new UserProxy(doc));
     };
 
-    if (requestUser.role === UserRolesEnum.ADMIN)
+    // if (requestUser.role === UserRolesEnum.ADMIN)
+
       return await onValidate();
 
     throw new ForbiddenException('You are not allowed to create a User.');
@@ -75,7 +83,7 @@ export class UserService {
       const doc = await this.repository.findById(id);
 
       if (payload.name)
-        doc.name = payload.name;
+        doc.email = payload.name;
 
       return await this.repository.update(doc)
         .then(doc => new UserProxy(doc));

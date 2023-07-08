@@ -12,22 +12,19 @@ export class LocalUserService implements ILocalUserService {
   ) {}
 
   public async getUser(username: string, password: string): Promise<IRequestUser> {
-    //TODO: ACERTAR O USERNAME E PASSWORD VINDO DO LOCAL STRATEGY
-    // const user = await this.repository.findOneByEmail(username);
-    //
-    // if(!user)
-    //   throw new UnauthorizedException('Email or password invalid! ');
-    //
-    // const passwordMatch = await bcrypt.compare(user.password, password);
-    //
-    // if(!passwordMatch)
-    //   throw new UnauthorizedException('Email or password invalid!');
-    //
-    // return user;
+    const user = await this.repository.findOneByEmail(username);
+
+    if(!user)
+      throw new UnauthorizedException('Email or password invalid! ');
+
+    const passwordMatch = await bcrypt.compare(password, user.password);
+
+    if(!passwordMatch)
+      throw new UnauthorizedException('Email or password invalid!');
 
     return {
-      id: 1,
-      role: UserRolesEnum.USER
+      id: user.id,
+      role: user.role
     }
   }
 }

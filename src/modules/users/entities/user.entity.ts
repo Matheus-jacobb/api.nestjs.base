@@ -14,6 +14,9 @@ export class UserEntity extends BaseEntity {
   public email!: string;
 
   @Column()
+  public emails!: string;
+
+  @Column()
   public password!: string;
 
   @Column()
